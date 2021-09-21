@@ -11,13 +11,14 @@ const ListadoProyectos = () => {
     obtenerProyectos();
   }, []);
   //revisar si proyectos tiene contenido
-  if (proyectos.length === 0) return null;
+  if (proyectos.length === 0)
+    return <h2>No hay proyectos comienza creando uno</h2>;
 
   return (
     <div>
       <ul className='listado-proyectos'>
         {proyectos.map((proyecto) => (
-          <Proyecto key={proyecto.id} proyecto={proyecto} />
+          <Proyecto key={proyecto.nombre} proyecto={proyecto} />
         ))}
       </ul>
     </div>
